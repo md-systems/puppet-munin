@@ -100,7 +100,7 @@ class munin::node (
     owner   => root,
     group   => root,
     mode    => '0644',
-    tag     => 'munin-node',
+    tag     => ['munin-node', "munin-node-${::location}", "munin-node-${::company}", "munin-node-${::company}-${::location}"],
     content => template('munin/munin-conf-node-info.erb'),
   }
 
